@@ -21,12 +21,12 @@ namespace PryLedoTP
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+            objBaseDatos.BuscarApellido(txtBuscarApellido.Text, dgvGrilla);
         }
 
         private void btnBuscar1_Click(object sender, EventArgs e)
         {
-
+            objBaseDatos.BuscarCiudad(txtCiu.Text, dgvGrilla);
         }
 
         private void BtnVolver_Click(object sender, EventArgs e)

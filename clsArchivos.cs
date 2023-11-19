@@ -21,7 +21,9 @@ namespace PryLedoTP
         public string estadoConexion = "";
 
         public string datosTabla = "";
-        
+
+        public string nombreArchivo = "NuevoEmpleado.txt";
+
         public void ConectarBD()
         {
             try
@@ -66,6 +68,98 @@ namespace PryLedoTP
                 }
             }
 
+
+        }
+
+        public void BuscarApellido(string codigo, DataGridView grilla)
+        {
+            grilla.Columns.Clear();
+            grilla.Rows.Clear();
+            comandoBD = new OleDbCommand();
+
+            comandoBD.Connection = conexionBD;
+            comandoBD.CommandType = System.Data.CommandType.TableDirect;
+            comandoBD.CommandText = "DATOS PERSONALES";
+
+            lectorBD = comandoBD.ExecuteReader();
+
+            grilla.Columns.Add("Nombre", "Nombre");
+            grilla.Columns.Add("Apellido", "Apellido");
+            grilla.Columns.Add("direccion", "direccion");
+            grilla.Columns.Add("ciudad", "ciudad");
+            grilla.Columns.Add("telefono", "telefono");
+            grilla.Columns.Add("Ingreso", "Ingreso");
+
+
+            if (lectorBD.HasRows) //SI TIENE FILAS
+            {
+                bool Find = false;
+                while (lectorBD.Read())
+                {
+                    if ((lectorBD[2].ToString()) == codigo)
+                    {
+                        datosTabla += "-" + lectorBD[0];
+                        grilla.Rows.Add(lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[5], lectorBD[6]);
+                        Find = true;
+                    }
+                }
+                if (Find == false)
+                {
+
+                    MessageBox.Show("NO Existente", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+                }
+            }
+        }
+
+        public void BuscarCiudad(string codigo, DataGridView grilla)
+        {
+            grilla.Columns.Clear();
+            grilla.Rows.Clear();
+            comandoBD = new OleDbCommand();
+
+            comandoBD.Connection = conexionBD;
+            comandoBD.CommandType = System.Data.CommandType.TableDirect;
+            comandoBD.CommandText = "DATOS PERSONALES";
+
+            lectorBD = comandoBD.ExecuteReader();
+
+            grilla.Columns.Add("Nombre", "Nombre");
+            grilla.Columns.Add("Apellido", "Apellido");
+            grilla.Columns.Add("direccion", "direccion");
+            grilla.Columns.Add("ciudad", "ciudad");
+            grilla.Columns.Add("telefono", "telefono");
+            grilla.Columns.Add("Ingreso", "Ingreso");
+
+
+            if (lectorBD.HasRows) //SI TIENE FILAS
+            {
+                bool Find = false;
+                while (lectorBD.Read())
+                {
+                    if ((lectorBD[4].ToString()) == codigo)
+                    {
+                        datosTabla += "-" + lectorBD[0];
+                        grilla.Rows.Add(lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[5], lectorBD[6]);
+                        Find = true;
+                    }
+                }
+                if (Find == false)
+                {
+
+                    MessageBox.Show("NO Existente", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+                }
+            }
+        }
+
+        public void Grabar(string datosConcatenados)
+        {
+            StreamWriter AD = new StreamWriter(nombreArchivo, true);
+            AD.WriteLine(datosConcatenados);
+            AD.Close();
 
         }
 
