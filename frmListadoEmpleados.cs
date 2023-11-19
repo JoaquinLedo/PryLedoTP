@@ -16,5 +16,36 @@ namespace PryLedoTP
         {
             InitializeComponent();
         }
+
+        clsArchivos objBaseDatos;
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnBuscar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMenuPrincipal frmMenuPrincipal = new frmMenuPrincipal();
+            frmMenuPrincipal.Show();
+        }
+
+        private void frmListadoEmpleados_Load(object sender, EventArgs e)
+        {
+            objBaseDatos = new clsArchivos();
+            objBaseDatos.ConectarBD();
+            objBaseDatos.TraerDatos(dgvGrilla);
+        }
+
+        public void TraerDatos(DataGridView grilla)
+        {
+
+        }
     }
 }

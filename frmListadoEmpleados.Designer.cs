@@ -31,14 +31,14 @@
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.BtnCancelar = new System.Windows.Forms.Button();
-            this.txtBuscarApellido = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscarApellido = new System.Windows.Forms.TextBox();
             this.lblBuscarApellido = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnBuscar1 = new System.Windows.Forms.Button();
             this.txtCiu = new System.Windows.Forms.TextBox();
             this.lblBuscarCiu = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -77,25 +77,6 @@
             this.tabPage1.Text = "Apellido";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.Azure;
-            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(434, 432);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(90, 31);
-            this.BtnCancelar.TabIndex = 3;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // txtBuscarApellido
-            // 
-            this.txtBuscarApellido.Location = new System.Drawing.Point(182, 51);
-            this.txtBuscarApellido.Name = "txtBuscarApellido";
-            this.txtBuscarApellido.Size = new System.Drawing.Size(207, 26);
-            this.txtBuscarApellido.TabIndex = 1;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Azure;
@@ -106,6 +87,14 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscarApellido
+            // 
+            this.txtBuscarApellido.Location = new System.Drawing.Point(182, 51);
+            this.txtBuscarApellido.Name = "txtBuscarApellido";
+            this.txtBuscarApellido.Size = new System.Drawing.Size(207, 26);
+            this.txtBuscarApellido.TabIndex = 1;
             // 
             // lblBuscarApellido
             // 
@@ -118,7 +107,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.btnBuscar1);
             this.tabPage2.Controls.Add(this.txtCiu);
             this.tabPage2.Controls.Add(this.lblBuscarCiu);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
@@ -128,6 +117,18 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Barrio";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar1
+            // 
+            this.btnBuscar1.BackColor = System.Drawing.Color.Azure;
+            this.btnBuscar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar1.Location = new System.Drawing.Point(391, 100);
+            this.btnBuscar1.Name = "btnBuscar1";
+            this.btnBuscar1.Size = new System.Drawing.Size(90, 29);
+            this.btnBuscar1.TabIndex = 6;
+            this.btnBuscar1.Text = "Buscar";
+            this.btnBuscar1.UseVisualStyleBackColor = false;
+            this.btnBuscar1.Click += new System.EventHandler(this.btnBuscar1_Click);
             // 
             // txtCiu
             // 
@@ -145,16 +146,18 @@
             this.lblBuscarCiu.TabIndex = 1;
             this.lblBuscarCiu.Text = "Barrio:";
             // 
-            // button1
+            // BtnVolver
             // 
-            this.button1.BackColor = System.Drawing.Color.Azure;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(391, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 29);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BtnVolver.BackColor = System.Drawing.Color.Azure;
+            this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVolver.Location = new System.Drawing.Point(434, 432);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(90, 31);
+            this.BtnVolver.TabIndex = 3;
+            this.BtnVolver.Text = "Volver";
+            this.BtnVolver.UseVisualStyleBackColor = false;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // frmListadoEmpleados
             // 
@@ -163,10 +166,11 @@
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(578, 475);
             this.Controls.Add(this.dgvGrilla);
-            this.Controls.Add(this.BtnCancelar);
+            this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmListadoEmpleados";
             this.Text = "frmListadoEmpleados";
+            this.Load += new System.EventHandler(this.frmListadoEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -182,13 +186,13 @@
         private System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Button BtnVolver;
         private System.Windows.Forms.TextBox txtBuscarApellido;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblBuscarApellido;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txtCiu;
         private System.Windows.Forms.Label lblBuscarCiu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscar1;
     }
 }

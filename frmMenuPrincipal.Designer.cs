@@ -30,14 +30,13 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ListadoEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RegistroDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,37 +57,18 @@
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroDeEmpleadosToolStripMenuItem,
-            this.abrirToolStripMenuItem});
+            this.RegistroDeEmpleadosToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
-            // registroDeEmpleadosToolStripMenuItem
-            // 
-            this.registroDeEmpleadosToolStripMenuItem.Name = "registroDeEmpleadosToolStripMenuItem";
-            this.registroDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.registroDeEmpleadosToolStripMenuItem.Text = "Registro de empleados";
-            // 
-            // abrirToolStripMenuItem
-            // 
-            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.abrirToolStripMenuItem.Text = "Abrir";
-            // 
             // listadosToolStripMenuItem
             // 
             this.listadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.empleadosToolStripMenuItem});
+            this.ListadoEmpleadosToolStripMenuItem});
             this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
             this.listadosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.listadosToolStripMenuItem.Text = "Listados";
-            // 
-            // empleadosToolStripMenuItem
-            // 
-            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.empleadosToolStripMenuItem.Text = "Empleados";
             // 
             // herramientasToolStripMenuItem
             // 
@@ -118,6 +98,20 @@
             this.lblEstado.Size = new System.Drawing.Size(28, 17);
             this.lblEstado.Text = "- - -";
             // 
+            // ListadoEmpleadosToolStripMenuItem
+            // 
+            this.ListadoEmpleadosToolStripMenuItem.Name = "ListadoEmpleadosToolStripMenuItem";
+            this.ListadoEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ListadoEmpleadosToolStripMenuItem.Text = "Empleados";
+            this.ListadoEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.ListadoEmpleadosToolStripMenuItem_Click);
+            // 
+            // RegistroDeEmpleadosToolStripMenuItem
+            // 
+            this.RegistroDeEmpleadosToolStripMenuItem.Name = "RegistroDeEmpleadosToolStripMenuItem";
+            this.RegistroDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.RegistroDeEmpleadosToolStripMenuItem.Text = "Registro de Empleados";
+            this.RegistroDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeEmpleadosToolStripMenuItem_Click_1);
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,6 +122,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmMenuPrincipal";
             this.Text = "Sistema de Gestion";
+            this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -141,14 +136,13 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registroDeEmpleadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblEstado;
+        private System.Windows.Forms.ToolStripMenuItem RegistroDeEmpleadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ListadoEmpleadosToolStripMenuItem;
     }
 }
 
