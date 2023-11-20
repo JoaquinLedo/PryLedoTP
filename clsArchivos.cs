@@ -13,8 +13,8 @@ namespace PryLedoTP
     internal class clsArchivos
     {
         OleDbConnection conexionBD;
-        OleDbCommand comandoBD; //indica que quiero traer de las tablas
-        OleDbDataReader lectorBD; //carga info para desp leer
+        OleDbCommand comandoBD; 
+        OleDbDataReader lectorBD; 
 
         public string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\Resources\\EMPLEADO.accdb";
 
@@ -46,7 +46,7 @@ namespace PryLedoTP
             comandoBD = new OleDbCommand();
 
             comandoBD.Connection = conexionBD;
-            comandoBD.CommandType = System.Data.CommandType.TableDirect;  //q tipo de operacion quierp hacer y que me traiga TOD la tabla con el tabledirect
+            comandoBD.CommandType = System.Data.CommandType.TableDirect; 
             comandoBD.CommandText = "DATOS PERSONALES";
 
             lectorBD = comandoBD.ExecuteReader();
@@ -91,7 +91,7 @@ namespace PryLedoTP
             grilla.Columns.Add("Ingreso", "Ingreso");
 
 
-            if (lectorBD.HasRows) //SI TIENE FILAS
+            if (lectorBD.HasRows) 
             {
                 bool Find = false;
                 while (lectorBD.Read())
@@ -133,7 +133,7 @@ namespace PryLedoTP
             grilla.Columns.Add("Ingreso", "Ingreso");
 
 
-            if (lectorBD.HasRows) //SI TIENE FILAS
+            if (lectorBD.HasRows) 
             {
                 bool Find = false;
                 while (lectorBD.Read())
@@ -162,6 +162,5 @@ namespace PryLedoTP
             AD.Close();
 
         }
-
     }
 }
